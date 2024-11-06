@@ -1,9 +1,38 @@
-import React,{useState} from "react"
+import React,{useState,useEffect} from "react"
 import Course from "./Course"
+import base_url from "./../Api/bootapi";
+import axios from "axios";
 
 //useState is a hook
 
 const Allcourse=()=>{
+
+    //useState hook to hold the courses state
+    //useEffect is a hook that will be called when the course is loaded and loaded successfully
+
+    useEffect(()=>{
+    document.title="All Courses"
+    });
+
+    //funtion to calll server;
+    const getAllCoursesfromServr=()=>{
+        axios.get(`${base_url}/courses`)
+       .then(response=>{
+       //success
+        console.log(response.data);
+       },
+       (error)=>{
+           console.log(error);
+       }
+      );
+     };
+
+
+    //calling loading course funtion
+    useEffect(()=>{
+    getAllCoursesfromServr();
+    }, []);
+
     const [courses,setCourses]=useState([
     {title:"java course",description:"this is beginner cpre java course"},
     {title:"Python course",description:"this is data science targeted course to help u with data sciense"},

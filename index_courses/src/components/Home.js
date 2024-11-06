@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Container, Card, CardBody, CardTitle, CardText } from 'reactstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -6,6 +6,9 @@ import {Button} from "reactstrap";
 
 
 const Home = () => {
+
+    useEffect(() =>{
+    document.title="Welcome"});
 
 const notify = () => toast("Wow so easy!");
     return (

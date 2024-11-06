@@ -1,9 +1,11 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {Form, Label ,FormGroup, Input, Container,textarea,Button} from "reactstrap";
 
 const AddCourse=()=>{
 
 
+    useEffect(() =>{
+    document.title="Add Course"});
 
     return(
         <Container>

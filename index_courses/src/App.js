@@ -10,25 +10,34 @@ import Course from "./components/Course";
 import Home from "./components/Home";
 import Allcourses from"./components/Allcourses";
 import AddCourse from "./components/AddCourse";
-
-
+import Menus from "./components/Menus";
+import{BrowserRouter as Router,Route,Routes} from "react-router-dom";
 function App()
 {
 const notify = () => toast("Wow so easy!");
 
  return(
         <div>
-           //<h1>Welcome to courses application</h1>
-        <Container>
-            <Row>
-                <Col md={4}>
-                <h2>this is menu side</h2>
-                </Col>
-                <Col md={8}>
-                <h2>this is content side</h2>
-                </Col>
-            </Row>
-        </Container>
+          <Router>
+             <Header name={"Deepak"}/>
+                    <Container>
+                        <Row>
+                            <Col md={4}>
+                                <h2>this is menu side</h2>
+                                <Menus/>
+                            </Col>
+                            <Col md={8}>
+                            <h2>this is content side</h2>
+
+                            <Routes>
+                            <Route path="/" element={<Home/>} exact />
+                            <Route path="/add-course" element={<AddCourse/>} exact />
+                            <Route path="/view-courses" element={<Allcourses/>} exact />
+                            </Routes>
+                            </Col>
+                        </Row>
+                    </Container>
+          </Router>
         </div>
     );
  }
