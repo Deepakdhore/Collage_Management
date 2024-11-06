@@ -20,6 +20,7 @@ const notify = () => toast("Wow so easy!");
 
                    </Container>
        </div>
+
     );
 };
 
