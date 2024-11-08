@@ -2,22 +2,18 @@ package com.example.Collage_management.Entities;
 
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
 public class Course {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     private String title;
     private String description;
 
-    public Course(long id, String title, String description) {
+    public Course(Long id, String title, String description) {
         this();  // Calls the no-argument constructor
         this.id = id;
         this.title = title;
@@ -52,6 +48,7 @@ public class Course {
         this.description = description;
     }
 
+    
     @Override
     public String toString() {
         return "Course{" +
